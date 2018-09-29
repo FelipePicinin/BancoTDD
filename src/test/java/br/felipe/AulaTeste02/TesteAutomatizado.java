@@ -1,5 +1,8 @@
 package br.felipe.AulaTeste02;
 
+import static org.junit.Assert.assertTrue;
+
+import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -25,7 +28,15 @@ public class TesteAutomatizado {
 		WebElement botaoSalvar = driver.findElement(By.id("button1"));
         botaoSalvar.click();
         
-        
+     
 	}
 
+	   @Test
+       public void TesteSelenium() {
+		   WebDriver driver = new ChromeDriver();
+		   driver.get("http://192.168.4.103:8080/correntista/lista");
+		   boolean achouEmail = driver.getPageSource().contains("felipepicinin10@gmail.com");
+		   assertTrue(achouEmail);
+       }
+       
 }
